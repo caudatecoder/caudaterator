@@ -38,4 +38,4 @@ class Generator
   end
 end
 
-File.open('result.txt', 'w') { |fd| fd.write(JSON.generate(Generator.new.generate)) }
+File.open('result.json', 'w') { |fd| fd.write(JSON.generate(Generator.new.generate)) }
