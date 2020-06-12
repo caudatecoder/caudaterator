@@ -1,6 +1,7 @@
 window.event = new Event('results');
 document.addEventListener('results', displayResult)
 document.querySelector('.reload').addEventListener('click', displayResult)
+document.querySelector('.reload').addEventListener('click', spin)
 
 function displayResult() {
   document.getElementById('result').innerHTML = fetchResult()
@@ -13,6 +14,10 @@ function fetchResult() {
   }
 
   return window.results[randomIntFromInterval(0, window.results.length - 1)]
+}
+
+function spin() {
+  document.querySelector('.reload').classList.toggle("spin")
 }
 
 //
