@@ -9,8 +9,7 @@ function displayResult() {
 
 function fetchResult() {
   if (!window.results) {
-    console.warn('No results available')
-    return
+    return 'Loading...'
   }
 
   return window.results[randomIntFromInterval(0, window.results.length - 1)]
