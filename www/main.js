@@ -8,8 +8,8 @@ function displayResult() {
 
 function fetchResult() {
   if (!window.results) {
-    console.error('No results available')
-    result
+    console.warn('No results available')
+    return
   }
 
   return window.results[randomIntFromInterval(0, window.results.length - 1)]
