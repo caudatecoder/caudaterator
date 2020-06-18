@@ -8,11 +8,16 @@ function displayResult() {
 }
 
 function fetchResult() {
-  if (!window.results) {
+  if (!window.nouns) {
     return 'Loading...'
   }
 
-  return window.results[randomIntFromInterval(0, window.results.length - 1)]
+  let first_word =  window.c_words[randomIntFromInterval(0, window.c_words.length - 1)]
+  if (first_word.match(/er/)) {
+    return first_word + window.nouns[randomIntFromInterval(0, window.nouns.length - 1)]
+  } else {
+    return first_word + window.er_words[randomIntFromInterval(0, window.er_words.length - 1)]
+  }
 }
 
 function spin() {

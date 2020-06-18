@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+print 'Provide file name: '
+filename = gets.strip
+lines = File.readlines(filename).map(&:strip)
+
+newfilename = (filename.match?(/\./) ? filename.split('.').first : filename) + '.json'
+
+File.open(newfilename, 'w') { |fd| fd.write(JSON.generate(lines)) }
